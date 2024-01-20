@@ -5,6 +5,7 @@ from ray_casting import mapping
 from numba.core import types
 from numba.typed import Dict
 from numba import int32
+from map import code_x
 
 
 class Sprites:
@@ -167,39 +168,67 @@ class Sprites:
             },
         }
 
-        self.list_of_objects = [
-            SpriteObject(self.sprite_parameters['sprite_barrel'], (7.1, 2.1)),
-            SpriteObject(self.sprite_parameters['sprite_barrel'], (5.9, 2.1)),
-            SpriteObject(self.sprite_parameters['npc_devil1'], (7, 4)),
-            SpriteObject(self.sprite_parameters['sprite_door_v'], (3.5, 3.5)),
-            SpriteObject(self.sprite_parameters['sprite_door_h'], (1.5, 4.5)),
-            SpriteObject(self.sprite_parameters['npc_soldier0'], (2.5, 1.5)),
-            SpriteObject(self.sprite_parameters['npc_soldier1'], (5.51, 1.5)),
-            SpriteObject(self.sprite_parameters['npc_soldier0'], (6.61, 2.92)),
-            SpriteObject(self.sprite_parameters['npc_soldier1'], (7.68, 1.47)),
-            SpriteObject(self.sprite_parameters['npc_soldier0'], (8.75, 3.65)),
-            SpriteObject(self.sprite_parameters['npc_soldier1'], (1.27, 11.5)),
-            SpriteObject(self.sprite_parameters['npc_soldier0'], (1.26, 8.29)),
-            SpriteObject(self.sprite_parameters['npc_soldier1'], (9.0, 5.0)),
-            SpriteObject(self.sprite_parameters['npc_soldier0'], (10.5, 7.5)),
-            SpriteObject(self.sprite_parameters['npc_soldier1'], (11.0, 6.0)),
-            SpriteObject(self.sprite_parameters['npc_soldier0'], (12.5, 8.5)),
-            SpriteObject(self.sprite_parameters['npc_soldier1'], (14.0, 5.0)),
-            SpriteObject(self.sprite_parameters['npc_soldier0'], (15.5, 7.5)),
-            SpriteObject(self.sprite_parameters['sprite_barrel'], (11.0, 3.0)),
-            SpriteObject(self.sprite_parameters['sprite_barrel'], (12.5, 5.5)),
-            SpriteObject(self.sprite_parameters['sprite_barrel'], (14.0, 3.0)),
-            SpriteObject(self.sprite_parameters['sprite_barrel'], (15.5, 5.5)),
-            SpriteObject(self.sprite_parameters['sprite_barrel'], (17.0, 3.0)),
-            SpriteObject(self.sprite_parameters['sprite_barrel'], (18.5, 5.5)),
-            SpriteObject(self.sprite_parameters['sprite_barrel'], (20.0, 3.0)),
-            SpriteObject(self.sprite_parameters['sprite_barrel'], (21.5, 5.5)),
-            SpriteObject(self.sprite_parameters['sprite_barrel'], (23.0, 3.0)),
-            SpriteObject(self.sprite_parameters['sprite_barrel'], (24.5, 5.5)),
-            SpriteObject(self.sprite_parameters['npc_devil1'], (10.0, 7.0)),
-            SpriteObject(self.sprite_parameters['npc_devil'], (15.5, 9.5)),
-            SpriteObject(self.sprite_parameters['npc_devil'], (17.5, 10.5)),
-        ]
+        if code_x == 1:
+            self.list_of_objects = [
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (7.1, 2.1)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (5.9, 2.1)),
+                SpriteObject(self.sprite_parameters['npc_devil1'], (7, 4)),
+                SpriteObject(self.sprite_parameters['npc_soldier0'], (2.5, 1.5)),
+                SpriteObject(self.sprite_parameters['npc_soldier0'], (5.51, 1.5)),
+                SpriteObject(self.sprite_parameters['npc_soldier0'], (6.61, 2.92)),
+                SpriteObject(self.sprite_parameters['npc_soldier0'], (7.68, 1.47)),
+                SpriteObject(self.sprite_parameters['npc_soldier0'], (8.75, 3.65)),
+                SpriteObject(self.sprite_parameters['npc_soldier0'], (1.27, 11.5)),
+                SpriteObject(self.sprite_parameters['npc_soldier0'], (1.26, 8.29)),
+                SpriteObject(self.sprite_parameters['npc_soldier0'], (9.0, 5.0)),
+                SpriteObject(self.sprite_parameters['npc_soldier0'], (10.5, 7.5)),
+                SpriteObject(self.sprite_parameters['npc_soldier0'], (11.0, 6.0)),
+                SpriteObject(self.sprite_parameters['npc_soldier0'], (12.5, 8.5)),
+                SpriteObject(self.sprite_parameters['npc_soldier0'], (14.0, 5.0)),
+                SpriteObject(self.sprite_parameters['npc_soldier0'], (15.5, 7.5)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (11.0, 3.0)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (12.5, 5.5)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (14.0, 3.0)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (15.5, 5.5)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (17.0, 3.0)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (18.5, 5.5)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (20.0, 3.0)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (21.5, 5.5)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (23.0, 3.0)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (24.5, 5.5)),
+                SpriteObject(self.sprite_parameters['npc_devil1'], (10.0, 7.0)),
+            ]
+
+        if code_x == 2:
+            self.list_of_objects = [
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (79.1, 2.1)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (6.9, 2.1)),
+                SpriteObject(self.sprite_parameters['npc_devil'], (8, 4)),
+                SpriteObject(self.sprite_parameters['npc_soldier1'], (3.5, 1.5)),
+                SpriteObject(self.sprite_parameters['npc_soldier1'], (6.51, 1.5)),
+                SpriteObject(self.sprite_parameters['npc_soldier1'], (7.61, 2.92)),
+                SpriteObject(self.sprite_parameters['npc_soldier1'], (8.68, 1.47)),
+                SpriteObject(self.sprite_parameters['npc_soldier1'], (9.75, 3.65)),
+                SpriteObject(self.sprite_parameters['npc_soldier1'], (2.27, 11.5)),
+                SpriteObject(self.sprite_parameters['npc_soldier1'], (2.26, 8.29)),
+                SpriteObject(self.sprite_parameters['npc_soldier1'], (10.0, 5.0)),
+                SpriteObject(self.sprite_parameters['npc_soldier1'], (10.5, 7.5)),
+                SpriteObject(self.sprite_parameters['npc_soldier1'], (11.0, 6.0)),
+                SpriteObject(self.sprite_parameters['npc_soldier1'], (13.5, 8.5)),
+                SpriteObject(self.sprite_parameters['npc_soldier1'], (15.0, 5.0)),
+                SpriteObject(self.sprite_parameters['npc_soldier1'], (16.5, 7.5)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (12.0, 3.0)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (13.5, 5.5)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (15.0, 3.0)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (16.5, 5.5)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (18.0, 3.0)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (19.5, 5.5)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (21.0, 3.0)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (22.5, 5.5)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (24.0, 3.0)),
+                SpriteObject(self.sprite_parameters['sprite_barrel'], (25.5, 5.5)),
+                SpriteObject(self.sprite_parameters['npc_devil'], (1.0, 7.0)),
+            ]
 
     @property
     def sprite_shot(self):

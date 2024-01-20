@@ -1,7 +1,7 @@
 import pygame
 from settings import *
 from ray_casting import ray_casting
-from map import mini_map
+from map import mini_map, code_x
 from collections import deque
 from random import randrange
 import sys
@@ -15,12 +15,20 @@ class Drawing:
         self.clock = clock
         self.font = pygame.font.SysFont('Arial', 36, bold=True)
         self.font_win = pygame.font.Font('font/font.ttf', 80)
-        self.textures = {1: pygame.image.load('img/wall3.png').convert(),
-                         2: pygame.image.load('img/wall4.png').convert(),
-                         3: pygame.image.load('img/wall5.png').convert(),
-                         4: pygame.image.load('img/wall6.png').convert(),
-                         'S': pygame.image.load('img/sky2.png').convert()
-                         }
+        if code_x == 1:
+            self.textures = {1: pygame.image.load('img/wall3.png').convert(),
+                             2: pygame.image.load('img/wall4.png').convert(),
+                             3: pygame.image.load('img/wall5.png').convert(),
+                             4: pygame.image.load('img/wall6.png').convert(),
+                             'S': pygame.image.load('img/sky2.png').convert()
+                             }
+        else:
+            self.textures = {1: pygame.image.load('img/wall3.png').convert(),
+                             2: pygame.image.load('img/wall4.png').convert(),
+                             3: pygame.image.load('img/wall5.png').convert(),
+                             4: pygame.image.load('img/wall6.png').convert(),
+                             'S': pygame.image.load('img/sky1_2.png').convert()
+                             }
         # menu
         self.menu_trigger = True
         self.menu_picture = pygame.image.load('img/bg.png').convert()
