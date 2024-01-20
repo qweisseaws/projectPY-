@@ -3,6 +3,7 @@ import pygame
 import math
 from map import collision_walls
 
+
 class Player:
     def __init__(self, sprites):
         self.x, self.y = player_pos
@@ -14,8 +15,6 @@ class Player:
         self.rect = pygame.Rect(*player_pos, self.side, self.side)
         # weapon
         self.shot = False
-
-
 
     @property
     def pos(self):

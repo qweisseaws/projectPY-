@@ -5,6 +5,7 @@ import math
 import pygame
 from numba import njit
 
+
 @njit(fastmath=True, cache=True)
 def ray_casting_npc_player(npc_x, npc_y, blocked_doors, world_map, player_pos):
     ox, oy = player_pos
@@ -47,7 +48,7 @@ class Interaction:
         self.drawing = drawing
         self.pain_sound = pygame.mixer.Sound('sound/pain.wav')
         self.pain_sound = pygame.mixer.Sound('sound/spavn.wav')
-
+        self.start_time = pygame.time.get_ticks()
 
     def interaction_objects(self):
         if self.player.shot and self.drawing.shot_animation_trigger:
@@ -105,3 +106,14 @@ class Interaction:
                     if event.type == pygame.QUIT:
                         exit()
                 self.drawing.win()
+
+    def check_lost(self):
+        if pygame.time.get_ticks() - self.start_time > 60000:
+            pygame.mixer.music.stop()
+            pygame.mixer.music.load('sound/win.mp3')
+            pygame.mixer.music.play()
+            while True:
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        exit()
+                self.drawing.lost()
