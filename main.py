@@ -47,6 +47,7 @@ while True:
     interaction.clear_world()
     interaction.check_win()
     interaction.check_lost()
+    interaction.check_res()
 
     pygame.display.flip()
     clock.tick(60)

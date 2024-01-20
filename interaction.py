@@ -110,10 +110,20 @@ class Interaction:
     def check_lost(self):
         if pygame.time.get_ticks() - self.start_time > 60000:
             pygame.mixer.music.stop()
-            pygame.mixer.music.load('sound/win.mp3')
+            pygame.mixer.music.load('sound/lost.mp3')
             pygame.mixer.music.play()
             while True:
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
                         exit()
                 self.drawing.lost()
+
+    def check_res(self):
+        results = ((pygame.time.get_ticks() - self.start_time) / 1000) * 2
+        with open("res.txt", "w") as file:
+            if results >= 100:
+                file.write(f'''{str(results)} <--- its so bad.''')
+            elif results >= 65:
+                file.write(f'''{str(results)} <--- not bad.''')
+            elif results >= 30 < 65:
+                file.write(f'''{str(results)} <--- perfect?.''')
