@@ -1,0 +1,6 @@
+importlib-metadata==7.0.1
+llvmlite==0.41.1
+numba==0.58.1
+numpy==1.24.4
+pygame==2.5.2
+zipp==3.17.0
